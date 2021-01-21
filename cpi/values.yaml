@@ -1,0 +1,8 @@
+vcenter:
+  host: ""
+  insecureflag: "1"
+  port: "443"
+  datacenter: ""
+  username: ""
+  password: ""
+  
