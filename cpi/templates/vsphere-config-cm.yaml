@@ -4,19 +4,13 @@ metadata:
   name: cloud-config
   namespace: {{ .Release.Namespace }}
 data:
-  csi-vsphere.conf: |
+  vsphere.conf: |
     [Global]
-    cluster-id: 
-    secretName: vsphere-cpi-cloud-config
-    secretNamespace: {{ .Release.Namespace }}
+    secret-name = "vsphere-cpi-creds"
+    secret-namespace = {{ .Release.Namespace | quote }}
     port = {{ .Values.vcenter.port | default "443" | quote }}
     insecure-flag = {{ .Values.vcenter.insecureflag | default "1" | quote }}
 
     [VirtualCenter {{ .Values.vcenter.host | quote }}]
     datacenters = {{ .Values.vcenter.datacenter | quote }}
-
-    [Workspace]
-    server = {{ .Values.vcenter.host | quote }}
-    datacenter = {{ .Values.vcenter.datacenter | quote }}
-    default-datastore = {{ .Values.vcenter.defaultDatastore | quote }}
 

@@ -1,0 +1,8 @@
+apiVersion: v1
+name: vsphere-cpi
+version: 1.0.0
+appVersion: 1.0.0
+description: vSphere CPI driver
+maintainers:
+  - name: Rajashree Mandaogane
+    email: rajashree.28m@gmail.com
